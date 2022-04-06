@@ -1,14 +1,14 @@
 //let hash = "$2a$12$GTSbgcwbvKFDvK3I7OAlh.o4RSEQi7cM02F79CVryV34tPTSI3ZEu" // 60 char bcrypt hash
-let canvasSize = 600;
-let r = 50;
+let canvasSize = 800;
+let r = 100;
 let noiseScale = 0.02;
 
 
 function setup(){
   createCanvas(canvasSize, canvasSize);
-  stroke(255);
+  stroke('rgba(188, 0, 254,0.1)');
   noFill();
-  strokeWeight(1);
+  strokeWeight(3);
   background('#172231');
   angleMode(DEGREES);
 }
@@ -17,15 +17,48 @@ function draw(){
 
   translate(width/2, height/2);
 
+  let leavesBg = random(50, 100);
+
+  for(let i = 0; i < leavesBg; i++){
+
+    r = random(50, 400);
+    beginShape();
+    let pieceSize = random(720, 1500);
+    for (let angle = random(0, 360); angle < pieceSize; angle += 5){
+      rNoise = noise(noiseScale) * r;
+      curveVertex(cos(angle) * rNoise, sin(angle) * rNoise);
+      noiseScale = noiseScale + 0.05;
+    }
+    endShape();
+  }
+
+  let leavesSm = 1;
+  for(let i = 0; i < leavesSm; i++){
+
+    drawingContext.shadowBlur = 10;
+    drawingContext.shadowColor = 'rgba(255, 255, 255, .3)';
+  
+    stroke('rgba(188, 0, 254,0.8)');
+    r = random(300, 400);
+    beginShape();
+    let pieceSizeSm = random(3000, 4000);
+    for (let angle = random(0, 360); angle < pieceSizeSm; angle += 5){
+      rNoise = noise(noiseScale) * r;
+      curveVertex(cos(angle) * rNoise, sin(angle) * rNoise);
+      noiseScale = noiseScale + 0.03;
+    }
+    endShape();
+  }
+
+  stroke('rgba(188, 0, 254,1)');
   beginShape();
-  let angle = 0;
-  while (angle < 360){
-    rNoise = noise(noiseScale) * r;
-    vertex(cos(angle) * rNoise, sin(angle) * rNoise);
-    angle = angle + 10;
-    noiseScale = noiseScale + 0.1;
+  for (let angle = 0; angle < 900; angle += 10){
+    rNoise = noise(noiseScale) * 30;
+    curveVertex(cos(angle) * rNoise, sin(angle) * rNoise);
+    noiseScale = noiseScale + 0.01;
   }
   endShape();
+
   noLoop();
 }
 
