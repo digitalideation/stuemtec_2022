@@ -1,0 +1,64 @@
+/* ======================
+    GENERAL STYLES
+====================== */
+
+:root {
+    --color-main: #BC00FE;
+    --color-bg: #172231;
+    --font-family: 'Sora', sans-serif;
+}
+
+html {
+    font-size: 26px;
+}
+
+body {
+    background-color: var(--color-bg);
+    font-family: var(--font-family);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--font-family);
+    font-weight: bolder;
+}
+
+.text-large {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+/* ======================
+    NAV
+====================== */
+
+nav .uk-navbar-nav>li>a {
+    font-family: var(--font-family); 
+    text-transform: lowercase;
+    font-weight: 600;
+    font-size: 1rem;
+    min-height: auto;
+}
+
+/* ======================
+    HEADER
+====================== */
+
+.uk-light h1 {
+    font-size: 6rem;
+    color: var(--color-main);
+    margin-bottom: -15px;
+}
+.uk-light h1 span {
+    color: white;
+}
+
+header {
+    background-image: url(/assets/media/header_bg_img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 550px;
+    background-blend-mode: screen;
+    background-color: var(--color-bg);
+}
