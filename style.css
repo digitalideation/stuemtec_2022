@@ -135,12 +135,6 @@ header {
     background-color: var(--color-main);
 }
 
-@media (max-width: 767px) {
-    .section-1 .flower-wrapper > div > div {
-        height: 15vw;
-    }
-}
-
 .section-1 .flower-wrapper div:nth-child(2n) div {
     transform: rotate(-80deg);
 }
@@ -185,6 +179,8 @@ header {
     max-height: 80px;
     padding: 60px 20px 20px 20px;
     color: #23344B;
+    overflow: hidden;
+    pointer-events: none;
 }
 
 .section-2 textarea::placeholder {
@@ -303,4 +299,27 @@ header {
 
 .section-3 {
     padding-bottom: 75px;
+}
+
+/* ======================
+    RESPONSIVE
+====================== */
+
+@media (max-width: 767px) {
+    .uk-light h1 {
+        font-size: 15vw;
+    }
+    h2 {
+        font-size: 10vw;
+    }
+    .text-large {
+        font-size: 5vw;
+        margin-top: 5px;
+    }
+    .section-1 .flower-wrapper > div > div {
+        height: 15vw;
+    }
+    .section-2 #nft-wrapper .img-hash {
+        font-size: 3vw;
+    }
 }
