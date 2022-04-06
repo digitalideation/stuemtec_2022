@@ -1,52 +1,24 @@
-// Maurer Rose
-// The Coding Train / Daniel Shiffman
-// https://thecodingtrain.com/CodingInTheCabana/002-collatz-conjecture.html
-// https://youtu.be/4uU9lZ-HSqA
-// https://editor.p5js.org/codingtrain/sketches/qa7RiptE9
-
-let n = 0;
-let d = 0;
-// let dSlider;
-
 function setup() {
-  createCanvas(400, 400);
-  angleMode(DEGREES);
-  //dSlider = createSlider(1,180,1);
+  createCanvas(600, 650);
+  stroke(255);
+  strokeWeight(1);
+  textSize(30);
+  background('#172231');
 }
 
 function draw() {
-  background(0);
-  translate(width/2,height/2);
-  stroke(255);
-  //d = dSlider.value();
+  var n1 = 12
+  var d1 = 10
+  fill(255);
+  var k = n1/d1;
+  translate(width / 2, height / 2);
   noFill();
   beginShape();
-  strokeWeight(1);
-  for (let i = 0; i < 361; i++) {
-    let k = i * d;
-    let r = 150 * sin(n*k);
-    let x = r * cos(k);
-    let y = r * sin(k);
-    vertex(x,y);    
+  for (var a = 0; a < 360*d1; a=a+1) {
+    var r = 250*cos(radians(k*a));
+    var x = r*cos(radians(a));
+    var y = r*sin(radians(a));
+    vertex(x,y);
   }
-  endShape();
-
-  noFill();
-  stroke(255,0,255, 255);
-  strokeWeight(4);
-  beginShape();
-  for (let i = 0; i < 361; i++) {
-    let k = i;
-    let r = 150 * sin(n*k);
-    let x = r * cos(k);
-    let y = r * sin(k);
-    vertex(x,y);    
-  }
-  endShape();
-
-  n += 0.001;
-  d += 0.003;
-
-  
-  
+  endShape(CLOSE);
 }
