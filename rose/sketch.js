@@ -1,6 +1,7 @@
-let hash = "$2a$12$GTSbgcwbvKFDvK3I7OAlh.o4RSEQi7cM02F79CVryV34tPTSI3ZEu" // 60 char bcrypt hash
+//let hash = "$2a$12$GTSbgcwbvKFDvK3I7OAlh.o4RSEQi7cM02F79CVryV34tPTSI3ZEu" // 60 char bcrypt hash
 let canvasSize = 600;
 let r = 50;
+let noiseScale = 0.02;
 
 
 function setup(){
@@ -9,17 +10,23 @@ function setup(){
   noFill();
   strokeWeight(1);
   background('#172231');
-
+  angleMode(DEGREES);
 }
 
 function draw(){
 
-  // beginShape()
-  for(let angle = 0; angle < 360; angle + 10){
-    console.log(angle)
-    // vertex(cos(angle) * r, sin(angle) * r);
+  translate(width/2, height/2);
+
+  beginShape();
+  let angle = 0;
+  while (angle < 360){
+    rNoise = noise(noiseScale) * r;
+    vertex(cos(angle) * rNoise, sin(angle) * rNoise);
+    angle = angle + 10;
+    noiseScale = noiseScale + 0.1;
   }
-  // endShape(CLOSE);
+  endShape();
+  noLoop();
 }
 
 
