@@ -29,9 +29,27 @@ h1,h2,h3,h4,h5,h6 {
     margin-top: 0;
 }
 
+.uk-button {
+    background-color: rgba(47, 71, 101, 0.5);
+    color: var(--color-main);
+    border: 2px var(--color-main) solid;
+    border-radius: 0.5rem;
+    padding: 7px 25px;
+    text-transform: lowercase;
+}
+
+.uk-button.uk-button-primary {
+    background-color: var(--color-main);
+    color: white;
+}
+
 /* ======================
     NAV
 ====================== */
+
+nav {
+    padding: 30px;
+}
 
 nav .uk-navbar-nav>li>a {
     font-family: var(--font-family); 
