@@ -14,7 +14,7 @@ function setup(){
   strokeWeight(3);
   background('#172231');
   angleMode(DEGREES);
-  rectMode(CENTER);
+  //rectMode(CENTER);
   stroke('rgba(188, 0, 254,0.1)');
   noFill();
 
