@@ -22,6 +22,15 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: bolder;
 }
 
+h2 {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
 .text-large {
     font-size: 1.5rem;
     color: white;
@@ -41,6 +50,9 @@ h1,h2,h3,h4,h5,h6 {
 .uk-button.uk-button-primary {
     background-color: var(--color-main);
     color: white;
+}
+.uk-button.uk-button-icon {
+    padding: 10px 11px;
 }
 
 /* ======================
@@ -79,4 +91,37 @@ header {
     background-size: 550px;
     background-blend-mode: screen;
     background-color: var(--color-bg);
+}
+
+/* ======================
+    SECTION 1 - MEADOW
+====================== */
+
+.section-1.section-color {
+    background-color: var(--color-main);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.section-1 .flower-wrapper > div {
+    height: 10vw;
+    background-image: url(/assets/media/header_bg_img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-blend-mode: screen;
+    background-color: var(--color-main);
+}
+
+.section-1 .flower-wrapper div:nth-child(2n) {
+    transform: rotate(-80deg);
+}
+
+.section-1 .flower-wrapper div:nth-child(3n) {
+    transform: rotate(80deg);
+}
+
+.section-1 .text-wrapper {
+    position: relative;
+    z-index: 10;
 }
