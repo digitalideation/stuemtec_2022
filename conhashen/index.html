@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,27 +9,68 @@
   <title>conhashen</title>
 
   <!-- UIkit CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/css/uikit.min.css" />
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/css/uikit.min.css" />
+  <link rel="stylesheet" href="style.css">
 
-<!-- UIkit JS -->
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/js/uikit.min.js"></script>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/js/uikit.min.js"></script>
 
 </head>
-<body>
-  <nav>
 
+<body>
+  <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+      <div>
+        <a class="uk-button" href="https://discord.gg/GKr2nxw6ga" target="_blank">
+          D
+        </a>
+        <a class="uk-button" href="https://twitter.com/conhashen" target="_blank">
+          T
+        </a>
+      </div>
+    </div>
+    <div class="uk-navbar-center">
+      <ul class="uk-nav uk-navbar-nav" uk-scrollspy-nav="closest: li; scroll: true">
+        <li>
+          <a href="#join">join</a>
+        </li>
+        <li>
+          <a href="#flowers">flowers</a>
+        </li>
+        <li>
+          <a href="#about">about</a>
+        </li>
+      </ul>
+    </div>
+    <div class="uk-navbar-right">
+      <a class="uk-button" href="#">
+        Connect MetaMask
+      </a>
+    </div>
   </nav>
   <main>
     <header>
-
+      <div class="uk-flex uk-flex-middle uk-flex-center" uk-height-viewport="offset-top: true">
+          <div class="uk-text-center">
+            <h1>con<span>hash</span>en</h1>
+            <p class="text-large">your thoughts, your flower</p>
+            <a class="uk-button" href="#">get started</a>
+          </div>
+      </div>
     </header>
     <div class="content">
-      
+      <section class="section-color">
+        <div class="uk-container uk-container-expand">
+            <div>
+              
+            </div>
+        </div>
+      </section>
     </div>
     <footer>
 
     </footer>
   </main>
 </body>
+
 </html>
