@@ -47,6 +47,14 @@ p {
     text-transform: lowercase;
 }
 
+.uk-button:hover {
+    background-color: var(--color-main);
+    color: white;
+}
+.uk-button:hover svg path {
+    stroke: white
+}
+
 .uk-button.uk-button-primary {
     background-color: var(--color-main);
     color: white;
@@ -55,12 +63,20 @@ p {
     padding: 10px 11px;
 }
 
+.uk-button:not(.uk-button-icon) svg {
+    max-height: 25px;
+    max-width: 30px;
+    margin-right: 5px;
+}
+
 /* ======================
     NAV
 ====================== */
 
 nav {
-    padding: 30px;
+    margin: 0 30px;
+    padding: 30px 0;
+    border-bottom: 2px rgba(255, 255, 255, 0.2) solid;
 }
 
 nav .uk-navbar-nav>li>a {
@@ -69,6 +85,8 @@ nav .uk-navbar-nav>li>a {
     font-weight: 600;
     font-size: 1rem;
     min-height: auto;
+    padding: 10px 2vw;
+    color: white !important;
 }
 
 /* ======================
@@ -103,7 +121,11 @@ header {
     overflow: hidden;
 }
 
-.section-1 .flower-wrapper > div {
+.section-1 .flower-wrapper {
+    min-width: 100%;
+}
+
+.section-1 .flower-wrapper > div > div {
     height: 10vw;
     background-image: url(/assets/media/header_bg_img.png);
     background-repeat: no-repeat;
@@ -113,15 +135,191 @@ header {
     background-color: var(--color-main);
 }
 
-.section-1 .flower-wrapper div:nth-child(2n) {
+.section-1 .flower-wrapper div:nth-child(2n) div {
     transform: rotate(-80deg);
 }
 
-.section-1 .flower-wrapper div:nth-child(3n) {
+.section-1 .flower-wrapper div:nth-child(3n) div {
     transform: rotate(80deg);
 }
 
 .section-1 .text-wrapper {
     position: relative;
     z-index: 10;
+}
+
+/* ======================
+    SECTION 2 - NFT
+====================== */
+
+.section-2 {
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.section-2 textarea {
+    background: #23344B;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 80px 20px 20px 20px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 350px;
+    max-height: 600px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: white;
+    transition: 0.2s;
+}
+
+.section-2 textarea.hidden {
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    padding: 60px 20px 20px 20px;
+    color: #23344B;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.section-2 textarea::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.section-2 .textarea-wrapper {
+    position: relative;
+}
+
+.section-2 .secure-label {
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    top: 15px;
+    left: 15px;
+    background-color: #293D58;
+    font-size: 0.75rem;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.section-2 .secure-label svg {
+    height: 25px;
+}
+
+.section-2 input[type="submit"].uk-button {
+    width: 100%;
+    padding-top: 30px;
+    margin-top: -35px;
+    border: none;
+    color: white !important;
+}
+
+.section-2 input[type="submit"].uk-button:disabled {
+    background-color: #293D58;
+    border: none;
+}
+
+.section-2 .nft-loading {
+    margin: 50px;
+    display: none;
+}
+
+.section-2 .nft-loading svg circle {
+    fill-opacity: 10%;
+}
+
+.section-2 .nft-loading svg circle:nth-of-type(1) {
+    animation: nft-loading 2s infinite;
+}
+
+.section-2 .nft-loading svg circle:nth-of-type(2) {
+    animation: nft-loading 2s 0.3s infinite;
+}
+
+.section-2 .nft-loading svg circle:nth-of-type(3) {
+    animation: nft-loading 2s 0.6s infinite;
+}
+.section-2 .nft-loading svg circle:nth-of-type(4) {
+    animation: nft-loading 2s 1.2s  infinite;
+}
+
+@keyframes nft-loading {
+    0% {
+        fill-opacity: 10%;
+    }
+    70% {
+        fill-opacity: 100%;
+    }
+    100% {
+        fill-opacity: 10%;
+    }
+}
+
+.section-2 #nft-wrapper {
+    display: none;
+    margin-top: 50px;
+}
+
+.section-2 #nft-wrapper .img-wrapper {
+    position: relative;
+    z-index: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px var(--color-main) solid;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--color-bg);
+}
+
+.section-2 #nft-wrapper .img-hash {
+    z-index: -1;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: -2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--color-main);
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+}
+
+.section-2 #nft-wrapper .img-hash p {
+    margin: 0;
+}
+
+.section-2 #nft-wrapper .img-hash span {
+    font-weight: bold;
+}
+
+/* ======================
+    SECTION 2 - ABOUT
+====================== */
+
+.section-3 {
+    padding-bottom: 75px;
+}
+
+/* ======================
+    RESPONSIVE
+====================== */
+
+@media (max-width: 767px) {
+    .uk-light h1 {
+        font-size: 15vw;
+    }
+    h2 {
+        font-size: 10vw;
+    }
+    .text-large {
+        font-size: 5vw;
+        margin-top: 5px;
+    }
+    .section-1 .flower-wrapper > div > div {
+        height: 15vw;
+    }
+    .section-2 #nft-wrapper .img-hash {
+        font-size: 3vw;
+    }
 }
