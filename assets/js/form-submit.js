@@ -9,10 +9,24 @@ $(document).ready(function() {
         var value = document.getElementById("thought").value;
         var result = MD5(encodeURIComponent(value));
         
-        $(".form-submit").attr("value" ,'your hash: ' + result);
+        $(".form-submit").attr("value" ,'generating flower...');
         $(".form-submit").attr("disabled", "disabled");
         $("textarea").attr("disabled", "disabled");
 
+        $(".nft-loading").show();
+
+
+        setTimeout(
+            function() 
+            {
+                $(".nft-loading").hide();
+                $(".form-submit").attr("value" ,'flower generated!');
+
+                $(".show-hash").text(result);
+                $("#nft-wrapper").show();
+                //$(".nft-wrapper").scrollIntoView();
+                document.getElementById("nft-wrapper").scrollIntoView({ behavior: 'smooth', block: 'center'});        
+            }, 2000);
       return false;
      });
 });

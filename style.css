@@ -148,6 +148,7 @@ header {
 
 .section-2 {
     padding-top: 200px;
+    padding-bottom: 200px;
 }
 
 .section-2 textarea {
@@ -193,4 +194,84 @@ header {
     width: 100%;
     padding-top: 30px;
     margin-top: -35px;
+    border: none;
+    color: white !important;
+}
+
+.section-2 input[type="submit"].uk-button:disabled {
+    background-color: #293D58;
+    border: none;
+}
+
+.section-2 .nft-loading {
+    margin: 50px;
+    display: none;
+}
+
+.section-2 .nft-loading svg circle {
+    fill-opacity: 10%;
+}
+
+.section-2 .nft-loading svg circle:nth-of-type(1) {
+    animation: nft-loading 2s infinite;
+}
+
+.section-2 .nft-loading svg circle:nth-of-type(2) {
+    animation: nft-loading 2s 0.3s infinite;
+}
+
+.section-2 .nft-loading svg circle:nth-of-type(3) {
+    animation: nft-loading 2s 0.6s infinite;
+}
+.section-2 .nft-loading svg circle:nth-of-type(4) {
+    animation: nft-loading 2s 1.2s  infinite;
+}
+
+@keyframes nft-loading {
+    0% {
+        fill-opacity: 10%;
+    }
+    70% {
+        fill-opacity: 100%;
+    }
+    100% {
+        fill-opacity: 10%;
+    }
+}
+
+.section-2 #nft-wrapper {
+    display: none;
+    margin-top: 50px;
+}
+
+.section-2 #nft-wrapper .img-wrapper {
+    position: relative;
+    z-index: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px var(--color-main) solid;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--color-bg);
+}
+
+.section-2 #nft-wrapper .img-hash {
+    z-index: -1;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: -2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--color-main);
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+}
+
+.section-2 #nft-wrapper .img-hash p {
+    margin: 0;
+}
+
+.section-2 #nft-wrapper .img-hash span {
+    font-weight: bold;
 }
