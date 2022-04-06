@@ -1,20 +1,50 @@
-//let hash = "$2a$12$GTSbgcwbvKFDvK3I7OAlh.o4RSEQi7cM02F79CVryV34tPTSI3ZEu" // 60 char bcrypt hash
+var hash = "$2a$12$GTSbgcwbvKFDvK3I7OAlh.o4RSEQi7cM02F79CVryV34tPTSI3ZEu" // 60 char bcrypt hash
+var numb = hash.match(/\d/g);
+numb = numb.join("");
+console.log(numb);
+
 let canvasSize = 800;
 let r = 100;
 let noiseScale = 0.02;
 
-
 function setup(){
-  createCanvas(canvasSize, canvasSize);
-  stroke('rgba(188, 0, 254,0.1)');
-  noFill();
+  createCanvas(canvasSize, canvasSize, SVG);
   strokeWeight(3);
   background('#172231');
   angleMode(DEGREES);
+
+  let flowerMask = createGraphics(canvasSize, canvasSize);
+
+  // flowerMask.stroke('rgba(188, 0, 254,1)');
+  // flowerMask.beginShape();
+  // for (let angle = 0; angle < 900; angle += 10){
+  //   rNoise = noise(noiseScale) * 30;
+  //   flowerMask.curveVertex(cos(angle) * rNoise, sin(angle) * rNoise);
+  //   noiseScale = noiseScale + 0.01;
+  // }
+  // flowerMask.endShape();
+
+
 }
 
 function draw(){
+  clear();
+  fill('#172231');
+  noStroke();
+  rect(0, 0, canvasSize, canvasSize)
+  drawFlower();
+  //flower().mask(flowerMask);
+  //save("mySVG.svg");
+  noLoop();
+}
 
+function drawFlower(){
+
+  // styles
+  stroke('rgba(188, 0, 254,0.1)');
+  noFill();
+
+  // set center
   translate(width/2, height/2);
 
   let leavesBg = random(50, 100);
@@ -41,7 +71,7 @@ function draw(){
     stroke('rgba(188, 0, 254,0.8)');
     r = random(300, 400);
     beginShape();
-    let pieceSizeSm = random(3000, 4000);
+    let pieceSizeSm = random(4000, 6000);
     for (let angle = random(0, 360); angle < pieceSizeSm; angle += 5){
       rNoise = noise(noiseScale) * r;
       curveVertex(cos(angle) * rNoise, sin(angle) * rNoise);
@@ -59,36 +89,4 @@ function draw(){
   }
   endShape();
 
-  noLoop();
 }
-
-
-
-
-// ====================================
-//        geometric flower
-// ====================================
-// function setup() {
-//   createCanvas(600, 650);
-//   stroke(255);
-//   strokeWeight(1);
-//   textSize(30);
-//   background('#172231');
-// }
-
-// function draw() {
-//   var n1 = 12
-//   var d1 = 10
-//   fill(255);
-//   var k = n1/d1;
-//   translate(width / 2, height / 2);
-//   noFill();
-//   beginShape();
-//   for (var a = 0; a < 360*d1; a=a+1) {
-//     var r = 250*cos(radians(k*a));
-//     var x = r*cos(radians(a));
-//     var y = r*sin(radians(a));
-//     vertex(x,y);
-//   }
-//   endShape(CLOSE);
-// }
