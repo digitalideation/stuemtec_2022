@@ -238,7 +238,7 @@ header .header-img {
 
 .section-2 .secure-label {
     position: absolute;
-    z-index: 1;
+    z-index: 5;
     display: inline-block;
     top: 15px;
     left: 15px;
