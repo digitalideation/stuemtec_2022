@@ -24,6 +24,7 @@ h1,h2,h3,h4,h5,h6 {
 
 h2 {
     font-size: 3rem;
+    line-height: 3.5rem;
     margin-bottom: 0;
 }
 
@@ -126,6 +127,10 @@ header {
     overflow: hidden;
 }
 
+.section-1.section-color .uk-container {
+    width: 100%;
+}
+
 .section-1 .flower-wrapper {
     min-width: 100%;
 }
@@ -151,6 +156,10 @@ header {
 .section-1 .text-wrapper {
     position: relative;
     z-index: 10;
+}
+
+.section-1 .text-wrapper p {
+    max-width: 600px;
 }
 
 /* ======================
@@ -398,6 +407,7 @@ footer .uk-button.uk-button-icon svg {
     }
     h2 {
         font-size: 10vw;
+        line-height: 12vw;
     }
     .text-large {
         font-size: 4vw;
@@ -414,5 +424,8 @@ footer .uk-button.uk-button-icon svg {
 @media (min-width: 1920px) {
     .section-1 .flower-wrapper > div > div {
         height: 230px;
+    }
+    .section-1.section-color .uk-container {
+        width: 1900px;
     }
 }
