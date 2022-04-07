@@ -1,21 +1,44 @@
 var hash = "$2a$12$GTSbgcwbvKFDvK3I7OAlh.o4RSEQi7cM02F79CVryV34tPTSI3ZEu" // 60 char bcrypt hash
-var numb = hash.match(/\d/g);
-numb = numb.join("");
-console.log(numb);
 
 let canvasSize = 800;
-let r = 100;
 let noiseScale = 0.02;
+let bgColor = '#172231';
+
+let r;
 let flowerMask;
 let rNoise;
+let numLength;
+
+
+
+let strokeColor;
+let strokeColorCalc;
+let colorR;
+let colorG;
+let colorB;
+let colorA;
+
 
 function setup(){
   createCanvas(canvasSize, canvasSize, SVG);
   strokeWeight(3);
-  background('#172231');
+  background(bgColor);
   angleMode(DEGREES);
-  //rectMode(CENTER);
-  stroke('rgba(188, 0, 254,0.1)');
+
+  var number = hash.match(/\d/g);
+  number = number.join(""); // filtering out the numbers
+  let num = number.split(''); // adding the number to the
+  numLength = num.length; // length of the number array
+
+  strokeColorCalc = round(120 + (random(0,10) * num[round(random(0, num.length))]))
+  colorR = strokeColorCalc;
+  colorG = strokeColorCalc;
+  colorB = strokeColorCalc;
+  colorA = 0.1;
+
+  strokeColor = 'rgba(' + colorR + ',' + colorG + ',' + colorB + ',' + colorA + ')';
+
+  stroke(strokeColor);
   noFill();
 
   // flowerMask = createGraphics(canvasSize, canvasSize);
@@ -35,19 +58,18 @@ function setup(){
 
 function draw(){
   clear();
-  fill('#172231');
+  fill(bgColor);
   noStroke();
   rect(0, 0, canvasSize, canvasSize)
   drawFlower();
   // image(flowerMask, 0, 0)
-  //save("mySVG.svg");
   noLoop();
 }
 
 function drawFlower(){
 
   // styles
-  stroke('rgba(188, 0, 254,0.1)');
+  stroke(strokeColor);
   noFill();
 
   // set center
@@ -76,7 +98,9 @@ function drawFlower(){
     drawingContext.shadowBlur = 10;
     drawingContext.shadowColor = 'rgba(255, 255, 255, .3)';
   
-    stroke('rgba(188, 0, 254,.8)');
+    colorA = 0.8;
+    strokeColor = 'rgba(' + colorR + ',' + colorG + ',' + colorB + ',' + colorA + ')';
+    stroke(strokeColor);
     r = random(300, 400);
     beginShape();
     let pieceSizeSm = random(4000, 6000);
@@ -89,7 +113,7 @@ function drawFlower(){
   }
 
   // inner circle
-  stroke('rgba(188, 0, 254,.8)');
+  stroke(strokeColor);
   beginShape();
   for (let angle = 0; angle < 900; angle += 10){
     rNoise = noise(noiseScale) * 30;
@@ -98,4 +122,14 @@ function drawFlower(){
   }
   endShape();
 
+}
+
+
+function drawLine(){
+
+}
+
+
+function downloadsvg(){
+  save("flower.svg");
 }
