@@ -15,24 +15,6 @@ $(document).ready(function() {
 
         $(".nft-loading").show();
 
-
-        setTimeout(
-            function() 
-            {
-                $(".section-2 textarea").addClass("hidden")
-                setTimeout(
-                    function() 
-                    {
-                    $(".nft-loading").hide();
-                    $(".form-submit").attr("value" ,'flower generated!');
-
-                    $(".show-hash").text(result);
-                    $("#nft-wrapper").show();
-                    //$(".nft-wrapper").scrollIntoView();
-                    document.getElementById("nft-wrapper").scrollIntoView({ behavior: 'smooth', block: 'center'});
-                }, 150);               
-            }, 3000);
-            
       return false;
      });
 });
