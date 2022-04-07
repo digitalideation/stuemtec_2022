@@ -109,12 +109,29 @@ nav .uk-navbar-nav>li>a {
 }
 
 header {
-    background-image: url(/assets/media/header_bg_img.png);
+    /*background-image: url(/assets/media/header_bg_img.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 550px;
     background-blend-mode: screen;
+    background-color: var(--color-bg);*/
+    position: relative;
+    overflow: hidden;
+}
+
+header > div.uk-flex {
+    position: relative;
+    z-index: 2;
+}
+
+header .header-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-blend-mode: screen;
     background-color: var(--color-bg);
+    width: 550px;
 }
 
 /* ======================
@@ -386,8 +403,8 @@ footer .uk-button.uk-button-icon svg {
 ====================== */
 
 @media (max-width: 980px) {
-    header {
-        background-size: 420px;
+    header .header-img {
+        width: 420px;
     }
     .uk-light h1 {
         font-size: 4.5rem;
@@ -399,8 +416,8 @@ footer .uk-button.uk-button-icon svg {
 }
 
 @media (max-width: 767px) {
-    header {
-        background-size: 55vw;
+    header .header-img {
+        width: 55vw;
     }
     .uk-light h1 {
         font-size: 15vw;
