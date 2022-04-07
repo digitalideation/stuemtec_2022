@@ -28,8 +28,8 @@ $(document).ready(function() {
 
                     $(".show-hash").text(result);
                     $("#nft-wrapper").show();
-                    $(".nft-wrapper").scrollIntoView();
-                    //document.getElementById("nft-wrapper").scrollIntoView({ behavior: 'smooth', block: 'center'});
+                    //$(".nft-wrapper").scrollIntoView();
+                    document.getElementById("nft-wrapper").scrollIntoView({ behavior: 'smooth', block: 'center'});
                 }, 150);               
             }, 3000);
             
