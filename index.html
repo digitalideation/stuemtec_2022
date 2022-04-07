@@ -64,7 +64,7 @@
       </ul>
     </div>
     <div class="uk-navbar-right">
-      <a class="uk-button uk-button-icon" href="#" uk-tooltip="title: connect to wallet">
+      <a class="uk-button uk-button-icon connect-wallet" href="#" uk-tooltip="title: connect to wallet">
         <svg width="40" height="36" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M5 10.8082H33.3333V6.89461C33.3333 5.97268 32.3312 5.29178 31.285 5.50294L5 10.8082Z"
             stroke="#BC00FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -203,6 +203,7 @@
           <div class="uk-grid" uk-grid>
             <div class="uk-width-1-1 uk-text-center">
               <h2>convert your thoughts</h2>
+              <span id="status">Loading...</span>
             </div>
             <div class="uk-width-1-1">
               <form action="" id="flower-form">
@@ -405,12 +406,16 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
   integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+ 
+<script src="\node_modules\web3\dist\web3.min.js"></script>
+<script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
+<script src="/assets/js/mint.js"></script>
 <script src="/assets/js/form-submit.js"></script>
 <script src="/assets/js/scrolltrigger.js"></script>
 <script src="/assets/js/parallax.js"></script>
