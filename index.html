@@ -203,7 +203,24 @@
           <div class="uk-grid" uk-grid>
             <div class="uk-width-1-1 uk-text-center">
               <h2>convert your thoughts</h2>
-              <span id="status">Loading...</span>
+              <!--<span id="status">Loading...</span>-->
+            </div>
+            <div class="uk-width-1-1 uk-text-center">
+              <div>
+                <button class="uk-button connect-wallet">
+                  <svg width="40" height="36" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 10.8082H33.3333V6.89461C33.3333 5.97268 32.3312 5.29178 31.285 5.50294L5 10.8082Z"
+                      stroke="#BC00FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M34.9997 30.8237H4.99967C4.08301 30.8237 3.33301 30.1804 3.33301 29.394V12.2378C3.33301 11.4515 4.08301 10.8082 4.99967 10.8082H34.9997C35.9163 10.8082 36.6663 11.4515 36.6663 12.2378V29.394C36.6663 30.1804 35.9163 30.8237 34.9997 30.8237Z"
+                      stroke="#BC00FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M36.667 23.6753H30.0003C28.167 23.6753 26.667 22.3886 26.667 20.816C26.667 19.2433 28.167 17.9566 30.0003 17.9566H36.667V23.6753Z"
+                      stroke="#BC00FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  connect wallet to mint
+                </button>
+              </div>
             </div>
             <div class="uk-width-1-1">
               <form action="" id="flower-form">
@@ -224,13 +241,15 @@
                         </svg>
                         Secure
                       </a>
-                      <textarea name="thought" id="thought" cols="50" rows="10"
+                      <textarea disabled name="thought" id="thought" cols="50" rows="10"
                         placeholder="your thoughts ..."></textarea>
                       <!--<input type="hidden" id="hash" name="hash" value="4fded1464736e77865df232cbcb4cd19">-->
                     </div>
                   </div>
                   <div class="uk-width-1-1 uk-margin-remove-top">
-                    <input class="uk-button uk-button-primary form-submit" type="submit" value="generate my flower">
+                    <button disabled class="uk-button uk-button-primary form-submit" type="submit" id="status">
+                      connect wallet before minting
+                    </button>
                   </div>
               </form>
             </div>
@@ -259,21 +278,6 @@
                   <span class="show-hash"></span>
                 </p>
               </div>
-              <!--<div> // Not needed due to connection on generating
-                <a class="uk-button" href="">
-                  <svg width="40" height="36" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 10.8082H33.3333V6.89461C33.3333 5.97268 32.3312 5.29178 31.285 5.50294L5 10.8082Z"
-                      stroke="#BC00FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M34.9997 30.8237H4.99967C4.08301 30.8237 3.33301 30.1804 3.33301 29.394V12.2378C3.33301 11.4515 4.08301 10.8082 4.99967 10.8082H34.9997C35.9163 10.8082 36.6663 11.4515 36.6663 12.2378V29.394C36.6663 30.1804 35.9163 30.8237 34.9997 30.8237Z"
-                      stroke="#BC00FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M36.667 23.6753H30.0003C28.167 23.6753 26.667 22.3886 26.667 20.816C26.667 19.2433 28.167 17.9566 30.0003 17.9566H36.667V23.6753Z"
-                      stroke="#BC00FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  connect wallet to mint
-                </a>
-              </div>-->
             </div>
           </div>
         </div>

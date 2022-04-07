@@ -51,12 +51,19 @@ p {
     border-radius: 0.5rem;
     padding: 7px 25px;
     text-transform: lowercase;
+    display: inline-block;
 }
 
 .uk-button:hover {
     background-color: var(--color-main);
     color: white;
 }
+
+.uk-button:disabled {
+    border-color: rgba(47, 71, 101, 0.5);
+    opacity: 0.5;
+}
+
 .uk-button:hover svg path {
     stroke: white
 }
@@ -202,6 +209,8 @@ header .header-img {
     font-size: 1rem;
     color: white;
     transition: 0.2s;
+    position: relative;
+    z-index: 3;
 }
 
 .section-2 textarea.hidden {
@@ -214,8 +223,13 @@ header .header-img {
     pointer-events: none;
 }
 
+
 .section-2 textarea::placeholder {
     color: rgba(255, 255, 255, 0.75);
+}
+
+.section-2 textarea:disabled::placeholder {
+    color: rgba(255, 255, 255, 0.2);
 }
 
 .section-2 .textarea-wrapper {
@@ -238,7 +252,20 @@ header .header-img {
     height: 25px;
 }
 
-.section-2 input[type="submit"].uk-button {
+.section-2 button.uk-button.wallet-connect {
+    transition: 0.15s;
+    height: 80px;
+}
+
+.section-2 button.uk-button.connect-wallet.hide {
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.section-2 form button.uk-button {
     width: 100%;
     padding-top: 30px;
     margin-top: -35px;
@@ -246,9 +273,10 @@ header .header-img {
     color: white !important;
 }
 
-.section-2 input[type="submit"].uk-button:disabled {
-    background-color: #293D58;
+.section-2 button.uk-button:disabled {
+    background-color: #3f0753;
     border: none;
+    color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .section-2 .nft-loading {

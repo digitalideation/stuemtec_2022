@@ -8,7 +8,14 @@ async function loadWeb3() {
   async function load() {
     await loadWeb3()
     window.contract = await loadContract()
-    updateStatus('Ready!')
+    updateStatus('mint my flower')
+    $("#status").removeAttr("disabled", "disabled");
+    $("#thought").removeAttr("disabled", "disabled");
+    $("#flowers .connect-wallet").addClass("hide");
+
+    $("nav .connect-wallet").addClass("connected");
+    $("nav .connect-wallet").attr("uk-tooltip", "title: connected");
+    $("nav .connect-wallet").attr("disabled", "disabled");
   }
 
   function updateStatus(status) {
