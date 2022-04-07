@@ -20,7 +20,9 @@ let colorA;
 
 
 function setup(){
-  createCanvas(canvasSize, canvasSize, SVG);
+  const flowercanvas = createCanvas(canvasSize, canvasSize, SVG);
+  flowercanvas.parent('flower_nft');
+
   strokeWeight(3);
   background(bgColor);
   angleMode(DEGREES);
