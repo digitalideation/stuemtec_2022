@@ -276,7 +276,7 @@ header .header-img {
 .section-2 button.uk-button:disabled {
     background-color: #3f0753;
     border: none;
-    color: rgba(255, 255, 255, 0.6) !important;
+    color: rgba(255, 255, 255, 1) !important;
 }
 
 .section-2 .nft-loading {

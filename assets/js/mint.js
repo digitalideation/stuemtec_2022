@@ -564,5 +564,5 @@ async function loadWeb3() {
         document.getElementById("nft-wrapper").scrollIntoView({ behavior: 'smooth', block: 'center'});
     }, 150); 
         
-        updateStatus('updated')
+        updateStatus('mint successful!')
   }
