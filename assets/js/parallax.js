@@ -1,9 +1,9 @@
 // PARALLAX:JS
 var scene = document.getElementById('header-img');
 var parallaxInstance = new Parallax(scene, {
-  relativeInput: true,
-  /*limitY: 100,
-  limitX: 100,*/
-  frictionX: 0.05,
-  frictionY: 0.05
+  relativeInput: false,
+  limitY: 50,
+  limitX: 50,
+  frictionX: 0.1,
+  frictionY: 0.1
 });
