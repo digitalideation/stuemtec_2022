@@ -381,7 +381,7 @@ header .header-img {
 }
 
 .section-3 .items-container > div > div:not(:first-of-type) {
-    margin-top: -180px;
+    /*margin-top: -180px;*/
 }
 
 .section-3 .item-wrapper .item-number {
