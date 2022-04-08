@@ -32,10 +32,10 @@ function setup(){
   let num = number.split(''); // adding the number to the
   numLength = num.length; // length of the number array
 
-  strokeColorCalc = round(120 + (random(0,10) * num[round(random(0, num.length))]))
-  colorR = strokeColorCalc;
-  colorG = strokeColorCalc;
-  colorB = strokeColorCalc;
+  //strokeColorCalc = round(120 + (random(0,10) * num[round(random(0, num.length))]))
+  colorR = 188;
+  colorG = 0;
+  colorB = 254;
   colorA = 0.1;
 
   strokeColor = 'rgba(' + colorR + ',' + colorG + ',' + colorB + ',' + colorA + ')';
